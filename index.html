@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cam Scare</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        video {
+            display: none;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        #start-button {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="start-button">Başlat</button>
+    <video id="scare-video" controls>
+        <source src="camscare.webm" type="video/webm">
+        Tarayıcınız video oynatmayı desteklemiyor.
+    </video>
+
+    <script>
+        const startButton = document.getElementById("start-button");
+        const video = document.getElementById("scare-video");
+
+        startButton.addEventListener("click", () => {
+            startButton.style.display = "none";
+            video.style.display = "block";
+            video.play();
+        });
+    </script>
+</body>
+</html>
